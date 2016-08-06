@@ -1,7 +1,7 @@
 {
   "name": "@passmarked/phishtank",
   "description": "Small utility that loads any downloaded JSON databases from www.phishtank.com into Redis cache for quick local queries",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "engines": {
     "node": ">=0.12.0"
