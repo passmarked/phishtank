@@ -1,0 +1,47 @@
+{
+  "name": "@passmarked/phishtank",
+  "description": "Small utility that loads any downloaded JSON databases from www.phishtank.com into Redis cache for quick local queries",
+  "version": "1.0.0",
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "bin": {
+    "passmarked-phishtank": "index"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/passmarked/phishtank/"
+  },
+  "bugs": {
+    "url": "https://github.com/passmarked/phishtank/issues",
+    "email": "support@passmarked.com"
+  },
+  "keywords": [
+    "passmarked",
+    "passmark",
+    "security",
+    "standards",
+    "test",
+    "suite",
+    "unwanted",
+    "malware",
+    "phishtank",
+    "phish",
+    "phishing"
+  ],
+  "author": "Passmarked <devops@passmarked.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "async": "^2.0.1",
+    "moment": "^2.14.1",
+    "redis": "^2.6.2",
+    "request": "^2.74.0",
+    "string": "^3.3.1",
+    "underscore": "^1.8.3",
+    "yargs": "^4.8.1"
+  }
+}
