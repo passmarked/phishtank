@@ -1,5 +1,6 @@
-
 # Passmarked-Phishtank
+
+![NPM](https://img.shields.io/npm/dt/@passmarked/phishtank.svg)
 
 [Phishtank](https://www.phishtank.com) catalog's known Phishing urls which is a awesome resource. The entire database is provided for download in various formats such as XML/CSV and JSON over at [www.phishtank.com/developer_info.php](https://www.phishtank.com/developer_info.php).
 
