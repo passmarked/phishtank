@@ -90,20 +90,14 @@ Phishtank.boot = function(options, fn) {
     if(options.debug === true)
       console.log('Found ' + list.length + ' records in blacklist');
 
-    /**
-    * Pick a server to connect to
-    **/
-    var servers = (process.env.CACHE_SERVER || process.env.REDIS_SERVER || '127.0.0.1').split(',');
-    var server = servers[Math.floor(Math.random()*servers.length)];
-
     // debug
     if(options.debug === true)
-      console.log('connecting to redis server: ' + server);
+      console.log('connecting to redis server: ' + options.host);
 
     /**
     * Creating the actual client for redis
     **/
-    var client = redis.createClient(6379, server);
+    var client = redis.createClient(options.port || 6379, options.host || '127.0.0.1');
 
     // exit if we can't connect
     var exitTimer = setTimeout(function() {
@@ -140,7 +134,7 @@ Phishtank.boot = function(options, fn) {
 
     // output the error
     if(options.debug === true) 
-      console.log('connection to ' + server + ' success !');
+      console.log('connection to ' + options.host + ' success !');
 
     // list of chunks
     var chunks = [];
