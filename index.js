@@ -6,6 +6,8 @@ const _       = require('underscore');
 const async   = require('async');
 const redis   = require('redis');
 const crypto  = require('crypto');
+const S       = require('string');
+const url     = require('url');
 
 /**
 * Object to expose
@@ -169,9 +171,16 @@ Phishtank.boot = function(options, fn) {
         // increment
         count++;
 
+        // remove the query and hash params
+        var uri = url.parse( entry.url.toLowerCase() );
+
+        // remove the hash
+        uri.hash = '';
+        uri.search = '';
+
         // create the sha1 hash
         var shasum  = crypto.createHash('sha1');
-        shasum.update(entry.url.toLowerCase());
+        shasum.update(url.format(uri));
         var hash    = shasum.digest('hex');
 
         // create the key
